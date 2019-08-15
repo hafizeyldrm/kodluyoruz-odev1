@@ -1,0 +1,28 @@
+﻿@model Staff
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+<div>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td> Adı</td>
+                <td>Soyadı </td>
+                <td>TCNO </td>
+                <td>İşlem</td>
+            </tr>
+
+            <tr>
+                <td>@Model.Name</td>
+                <td>@Model.Surname</td>
+                <td>@Model.TCNo</td>
+                <td> <a asp-controller="Staff" asp-action="Index" class="btn btn-primary">Geri Dön</a></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+

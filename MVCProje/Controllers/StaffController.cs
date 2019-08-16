@@ -9,15 +9,23 @@ namespace MVCProje.Controllers
 {
     public class StaffController : Controller
     {
-        public static List<Staff> StaffList = new List<Staff>();
+        public static List<Staff> StaffList;
         public IActionResult Index()
         {
             List<Staff> staffList = Staff.GetSampleData();
+            if(StaffList!=null && StaffList.Any())
+            {
+                staffList.AddRange(StaffList);
+            }
             return View(staffList);
         }
         public IActionResult Detail(int id)
         {
             List<Staff> staffList = Staff.GetSampleData();
+            if(StaffList!=null && StaffList.Any())
+            {
+                staffList.AddRange(StaffList);
+            }
             Staff staff = staffList.Where(x => x.Id == id).FirstOrDefault();
             return View(staff);
 
